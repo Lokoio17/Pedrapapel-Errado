@@ -11,9 +11,9 @@ const jogadaM = () => {
 };
 
 const vitoriaM = () => {
-  return (
+  return
     ++pontuacaoMaquina + resultado.innerText("A maquina venceu")
-  );
+  ;
 };
 const vitoriaP = () => {
   return ++pontuacaoPessoa + resultado.innerText("Voce venceu");
