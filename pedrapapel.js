@@ -12,11 +12,11 @@ const jogadaM = () => {
 
 const vitoriaM = () => {
   return
-    ++pontuacaoMaquina + resultado.innerText("A maquina venceu")
-  ;
+    ++pontuacaoMaquina + resultado.innerText="A maquina venceu"
+ 
 };
 const vitoriaP = () => {
-  return ++pontuacaoPessoa + resultado.innerText("Voce venceu");
+  return ++pontuacaoPessoa + resultado.innerText="Voce venceu"
 };
 
 const rodada= () => {
