@@ -3,7 +3,10 @@ let pontuacaoMaquina = 0;
 
 const resultado = document.getElementById("resultado");
 
-const jogadaP = document.querySelector("input[name='opcao']:checked").val().toLowerCase();
+const jogadaP = document
+  .querySelector("input[name='opcao']:checked")
+  .val()
+  .toLowerCase();
 
 const jogadaM = () => {
   const escolhaM = ["Pedra", "Papel", "Tesoura"];
@@ -11,52 +14,43 @@ const jogadaM = () => {
 };
 
 const vitoriaM = () => {
-  return
-    ++pontuacaoMaquina + resultado.innerText="A maquina venceu"
- 
+  return ++pontuacaoMaquina + resultado.innerText("A maquina venceu");
 };
 const vitoriaP = () => {
-  return ++pontuacaoPessoa + resultado.innerText="Voce venceu"
+  return ++pontuacaoPessoa + resultado.innerText("Voce venceu");
 };
 
-const rodada= () => {
+const rodada = () => {
   switch (jogadaP && jogadaM()) {
-    case jogadaP == jogadaM:
-      {
-        resultado.innerText("O jogo deu empate");
-      }
+    case (jogadaP === jogadaM()):
+      resultado.innerText("O jogo deu empate");
+
       break;
-    case JogadaP == "pedra" && jogadaM() == "tesoura":
-      {
-        vitoriaP();
-      }
+
+    case (jogadaP === "pedra" && jogadaM() === "tesoura"):
+      vitoriaP();
+
       break;
-    case jogadaP == "papel" && jogadaM() == "pedra":
-      {
-        vitoriaP();
-      }
+
+    case (jogadaP === "papel" && jogadaM() === "pedra"):
+      vitoriaP();
+
       break;
-    case jogadaP == "tesoura" && jogadaM() == "papel":
-      {
-        vitoriaP();
-      }
+    case (jogadaP === "tesoura" && jogadaM() === "papel"):
+      vitoriaP();
+
       break;
-    case jogadaM() == "pedra" && jogadaP == "tesoura":
-      {
-        vitoriaM();
-      }
+    case (jogadaM() === "pedra" && jogadaP === "tesoura"):
+      vitoriaM();
       break;
-    case jogadaM() == "papel" && jogadaP == "pedra":
-      {
-        vitoriaM();
-      }
+    case (jogadaM() === "papel" && jogadaP === "pedra"):
+      vitoriaM();
       break;
-    case jogadaM() == "tesoura" && jogadaP == "papel":
-      {
-        vitoriaM();
-      }
+    case (jogadaM() === "tesoura" && jogadaP === "papel"):
+      vitoriaM();
       break;
   }
 };
 const botao = document.getElementById("botao");
-botao.addEventListener("click",rodada);
+botao.addEventListener("click", rodada);
+
