@@ -3,10 +3,7 @@ let pontuacaoMaquina = 0;
 
 const resultado = document.getElementById("resultado");
 
-const jogadaP = document
-  .querySelector("input[name='opcao']:checked")
-  .val()
-  .toLowerCase();
+
 
 const jogadaM = () => {
   const escolhaM = ["Pedra", "Papel", "Tesoura"];
@@ -18,9 +15,18 @@ const vitoriaM = () => {
 };
 const vitoriaP = () => {
   return ++pontuacaoPessoa + resultado.innerText("Voce venceu");
-};
+}
+
+
+
 
 const rodada = () => {
+  const botao=document.querySelector("#botao")
+  botao.addEventListener("click",rodada)
+
+  const jogadaP = document.querySelectorAll("input[name='opcao']:checked").value.toLowerCase();
+  
+  
   switch (jogadaP && jogadaM()) {
     case (jogadaP === jogadaM()):
       resultado.innerText("O jogo deu empate");
@@ -49,8 +55,6 @@ const rodada = () => {
     case (jogadaM() === "tesoura" && jogadaP === "papel"):
       vitoriaM();
       break;
+
   }
 };
-const botao = document.getElementById("botao");
-botao.addEventListener("click", rodada);
-
